@@ -1,0 +1,6 @@
+{
+  "name": "Daily Letter Companion",
+  "description": "A quiet daily letter ritual and mindfulness companion.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

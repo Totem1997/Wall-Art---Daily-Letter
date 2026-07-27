@@ -1,0 +1,74 @@
+[
+  {
+    "id": "morning-motivation",
+    "title": "Morning Motivation",
+    "duration": 5,
+    "durationText": "5 MIN",
+    "icon": "sun",
+    "bgGradient": "from-[#FDE8D0] to-[#FCE3C5]",
+    "stampColor": "#D9A05B",
+    "description": "Start your day with positivity and quiet motivation. You've got this.",
+    "quote": "Remember: You are enough. Just as you are.",
+    "audioUrl": "https://audio.com/embed/audio/1802958742880193"
+  },
+  {
+    "id": "calm-anxiety",
+    "title": "Calm Anxiety",
+    "duration": 7,
+    "durationText": "7 MIN",
+    "icon": "leaf",
+    "bgGradient": "from-[#E3ECE0] to-[#D5E4D1]",
+    "stampColor": "#8A9A86",
+    "description": "A gentle breath exercise to release tension and restore inner calm.",
+    "quote": "Breathe in peace, exhale what you cannot control.",
+    "audioUrl": "https://audio.com/embed/audio/1802958742880194"
+  },
+  {
+    "id": "focus-clarity",
+    "title": "Focus & Clarity",
+    "duration": 6,
+    "durationText": "6 MIN",
+    "icon": "book",
+    "bgGradient": "from-[#ECE5F5] to-[#DFD5ED]",
+    "stampColor": "#9B8CB8",
+    "description": "Clear your mind of morning clutter and center your thoughts for the day ahead.",
+    "quote": "One gentle step at a time is all that is required today.",
+    "audioUrl": "https://audio.com/embed/audio/1802958742880195"
+  },
+  {
+    "id": "gratitude-practice",
+    "title": "Gratitude Practice",
+    "duration": 6,
+    "durationText": "6 MIN",
+    "icon": "flower",
+    "bgGradient": "from-[#FDE6DF] to-[#FCD9CF]",
+    "stampColor": "#C57B57",
+    "description": "Pause to appreciate the simple warmth and quiet wonders around you right now.",
+    "quote": "Joy is found in the smallest, quietest moments.",
+    "audioUrl": "https://audio.com/embed/audio/1802958742880196"
+  },
+  {
+    "id": "deep-sleep",
+    "title": "Deep Sleep",
+    "duration": 10,
+    "durationText": "10 MIN",
+    "icon": "moon",
+    "bgGradient": "from-[#E2E9F3] to-[#D2DFEE]",
+    "stampColor": "#7A9CA6",
+    "description": "Soft guided relaxation to settle your thoughts and prepare for restful sleep.",
+    "quote": "Release today. Tonight is for rest and restoration.",
+    "audioUrl": "https://audio.com/embed/audio/1802958742880197"
+  },
+  {
+    "id": "confidence-boost",
+    "title": "Confidence Boost",
+    "duration": 5,
+    "durationText": "5 MIN",
+    "icon": "bird",
+    "bgGradient": "from-[#E5F2F5] to-[#D7EAEF]",
+    "stampColor": "#618591",
+    "description": "Reconnect with your innate strength, wisdom, and gentle self-belief.",
+    "quote": "You have survived 100% of your hardest days. Trust yourself.",
+    "audioUrl": "https://audio.com/embed/audio/1802958742880198"
+  }
+]
