@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ThemeConfig, Letter } from '../types';
-import lettersData from '../data/LetterBody.json';
 import themesData from '../data/Theme.json';
-import { X, Calendar, Palette, User, RefreshCw, Check } from 'lucide-react';
+import { X, Palette, User, RefreshCw, Check } from 'lucide-react';
 
 interface ArchiveDrawerProps {
   isOpen: boolean;
@@ -12,7 +11,7 @@ interface ArchiveDrawerProps {
   onSelectTheme: (themeId: string) => void;
   userName: string;
   onUpdateName: (name: string) => void;
-  onSelectLetter: (letter: Letter) => void;
+  onSelectLetter?: (letter: Letter) => void;
   onResetApp: () => void;
 }
 
@@ -23,10 +22,9 @@ export const ArchiveDrawer: React.FC<ArchiveDrawerProps> = ({
   onSelectTheme,
   userName,
   onUpdateName,
-  onSelectLetter,
   onResetApp
 }) => {
-  const [activeTab, setActiveTab] = useState<'archive' | 'themes' | 'profile'>('archive');
+  const [activeTab, setActiveTab] = useState<'themes' | 'profile'>('themes');
   const [editingName, setEditingName] = useState(userName);
 
   if (!isOpen) return null;
@@ -45,7 +43,7 @@ export const ArchiveDrawer: React.FC<ArchiveDrawerProps> = ({
           {/* Header */}
           <div className="p-5 border-b border-stone-200/60 flex items-center justify-between">
             <h3 className="font-serif-display text-xl font-semibold" style={{ color: currentTheme.textColor }}>
-              Companion Settings & Archive
+              Settings & Personalization
             </h3>
             <button 
               onClick={onClose}
@@ -58,17 +56,6 @@ export const ArchiveDrawer: React.FC<ArchiveDrawerProps> = ({
 
           {/* Navigation Tabs */}
           <div className="flex border-b border-stone-200/60 bg-stone-50/50 p-1 text-xs font-sans-clean font-medium">
-            <button
-              onClick={() => setActiveTab('archive')}
-              className={`flex-1 py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 ${
-                activeTab === 'archive' ? 'bg-white shadow-xs font-semibold' : 'opacity-60 hover:opacity-100'
-              }`}
-              style={{ color: currentTheme.textColor }}
-            >
-              <Calendar className="w-3.5 h-3.5" />
-              <span>Letters</span>
-            </button>
-
             <button
               onClick={() => setActiveTab('themes')}
               className={`flex-1 py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5 ${
@@ -94,37 +81,6 @@ export const ArchiveDrawer: React.FC<ArchiveDrawerProps> = ({
 
           {/* Tab Content */}
           <div className="p-6 overflow-y-auto space-y-4 flex-1">
-            
-            {/* Archive Tab */}
-            {activeTab === 'archive' && (
-              <div className="space-y-3">
-                <p className="font-serif-body text-xs opacity-75 mb-3">
-                  Revisit any letter from your companion archive whenever you need encouragement.
-                </p>
-                {lettersData.map((l) => {
-                  const firstSentence = l.body.split('\n\n')[0];
-                  return (
-                    <div
-                      key={l.id}
-                      onClick={() => {
-                        onSelectLetter(l as Letter);
-                        onClose();
-                      }}
-                      className="p-4 rounded-2xl border border-stone-200/80 bg-stone-50/40 hover:bg-white hover:shadow-sm cursor-pointer transition-all space-y-1"
-                    >
-                      <div className="flex items-center justify-between text-xs font-sans-clean font-semibold opacity-60">
-                        <span>LETTER #{l.id}</span>
-                        <span>Read ♡</span>
-                      </div>
-                      <p className="font-serif-body text-sm line-clamp-2 text-stone-800 leading-relaxed">
-                        "{firstSentence}"
-                      </p>
-                    </div>
-                  );
-                })}
-              </div>
-            )}
-
             {/* Themes Tab */}
             {activeTab === 'themes' && (
               <div className="space-y-3">
