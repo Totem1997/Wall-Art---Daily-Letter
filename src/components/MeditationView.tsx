@@ -71,7 +71,8 @@ export const MeditationView: React.FC<MeditationViewProps> = ({
       <div className="flex items-center justify-between mb-6">
         <button 
           onClick={onBack}
-          className="p-2 rounded-full hover:bg-black/5 active:scale-95 transition-all text-xs font-sans-clean font-medium flex items-center gap-1"
+          aria-label="Back to Choose Today's Companion"
+          className="p-2 rounded-full hover:bg-black/5 active:scale-95 transition-all text-xs font-sans-clean font-medium flex items-center gap-1 cursor-pointer"
           style={{ color: currentTheme.textColor }}
         >
           <ChevronLeft className="w-4 h-4" />
@@ -80,7 +81,8 @@ export const MeditationView: React.FC<MeditationViewProps> = ({
 
         <button 
           onClick={() => setIsFavorited(!isFavorited)}
-          className="p-2 rounded-full hover:bg-black/5 active:scale-95 transition-all"
+          aria-label={isFavorited ? "Remove from favorites" : "Add to favorites"}
+          className="p-2 rounded-full hover:bg-black/5 active:scale-95 transition-all cursor-pointer"
           style={{ color: currentTheme.textColor }}
         >
           <Heart className={`w-5 h-5 ${isFavorited ? 'fill-rose-500 text-rose-500' : 'opacity-60'}`} />
@@ -148,7 +150,8 @@ export const MeditationView: React.FC<MeditationViewProps> = ({
         <div className="flex items-center justify-center gap-6 sm:gap-8">
           <button 
             onClick={() => skipSeconds(-15)}
-            className="p-3 rounded-full hover:bg-black/5 active:scale-95 transition-all relative group"
+            aria-label="Rewind 15 seconds"
+            className="p-3 rounded-full hover:bg-black/5 active:scale-95 transition-all relative group cursor-pointer"
             style={{ color: currentTheme.textColor }}
             title="Rewind 15 seconds"
           >
@@ -158,7 +161,8 @@ export const MeditationView: React.FC<MeditationViewProps> = ({
 
           <button 
             onClick={togglePlay}
-            className="w-16 h-16 sm:w-18 sm:h-18 rounded-full shadow-lg flex items-center justify-center text-white transition-all active:scale-95 hover:shadow-xl"
+            aria-label={isPlaying ? "Pause meditation audio" : "Play meditation audio"}
+            className="w-16 h-16 sm:w-18 sm:h-18 rounded-full shadow-lg flex items-center justify-center text-white transition-all active:scale-95 hover:shadow-xl cursor-pointer"
             style={{ backgroundColor: currentTheme.primary }}
           >
             {isPlaying ? (
@@ -170,7 +174,8 @@ export const MeditationView: React.FC<MeditationViewProps> = ({
 
           <button 
             onClick={() => skipSeconds(15)}
-            className="p-3 rounded-full hover:bg-black/5 active:scale-95 transition-all relative group"
+            aria-label="Forward 15 seconds"
+            className="p-3 rounded-full hover:bg-black/5 active:scale-95 transition-all relative group cursor-pointer"
             style={{ color: currentTheme.textColor }}
             title="Forward 15 seconds"
           >

@@ -42,7 +42,8 @@ export const CompanionView: React.FC<CompanionViewProps> = ({
       <div className="text-center mb-8 relative">
         <button 
           onClick={onBackToLetter}
-          className="absolute left-0 top-1 text-xs font-sans-clean font-medium opacity-70 hover:opacity-100 transition-opacity flex items-center gap-1"
+          aria-label="Back to Letter"
+          className="absolute left-0 top-1 text-xs font-sans-clean font-medium opacity-70 hover:opacity-100 transition-opacity flex items-center gap-1 cursor-pointer"
           style={{ color: currentTheme.textColor }}
         >
           ← Back to Letter
@@ -66,13 +67,17 @@ export const CompanionView: React.FC<CompanionViewProps> = ({
           return (
             <motion.div
               key={meditation.id}
+              role="button"
+              tabIndex={0}
+              aria-label={`Select ${meditation.title} meditation companion, ${meditation.durationText}`}
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.06, duration: 0.4 }}
               whileHover={{ y: -4, scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => onSelectMeditation(meditation)}
-              className="cursor-pointer relative rounded-xl p-4 sm:p-5 flex flex-col items-center justify-between text-center bg-gradient-to-b stamp-border shadow-sm group transition-all"
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onSelectMeditation(meditation); }}
+              className="cursor-pointer relative rounded-xl p-4 sm:p-5 flex flex-col items-center justify-between text-center bg-gradient-to-b stamp-border shadow-sm group transition-all focus:outline-none focus:ring-2 focus:ring-amber-300"
               style={{
                 backgroundColor: currentTheme.cardBg,
                 borderColor: meditation.stampColor

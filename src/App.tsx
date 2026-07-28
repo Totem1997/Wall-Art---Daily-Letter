@@ -111,14 +111,16 @@ export default function App() {
         />
       )}
 
-      {/* Top Header */}
-      <Header
-        currentTheme={currentTheme}
-        onOpenArchive={() => setIsArchiveOpen(true)}
-        onOpenSettings={() => setIsArchiveOpen(true)}
-        soundEnabled={profile.soundEnabled || false}
-        onToggleSound={handleToggleSound}
-      />
+      {/* Top Header (Shown on inner screens after opening the letter) */}
+      {currentScreen !== 'welcome' && (
+        <Header
+          currentTheme={currentTheme}
+          onOpenArchive={() => setIsArchiveOpen(true)}
+          onOpenSettings={() => setIsArchiveOpen(true)}
+          soundEnabled={profile.soundEnabled || false}
+          onToggleSound={handleToggleSound}
+        />
+      )}
 
       {/* Main View Container */}
       <main className="flex-1 flex flex-col justify-center">

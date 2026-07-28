@@ -42,32 +42,32 @@ export const LetterView: React.FC<LetterViewProps> = ({
         <div className="absolute inset-0 paper-texture opacity-30 pointer-events-none" />
 
         {/* Top Right Cancellations & Stamps */}
-        <div className="absolute top-4 right-4 sm:top-6 sm:right-6 flex items-center gap-2 opacity-85 pointer-events-none">
-          <PostmarkStamp className="w-16 h-16 sm:w-20 sm:w-20" color={currentTheme.botanical} />
+        <div className="absolute top-3 right-3 sm:top-6 sm:right-6 flex items-center gap-1.5 sm:gap-2 opacity-85 pointer-events-none scale-75 xs:scale-90 sm:scale-100 origin-top-right">
+          <PostmarkStamp className="w-14 h-14 sm:w-20 sm:h-20" color={currentTheme.botanical} />
           <div 
-            className="w-10 h-12 sm:w-12 sm:h-14 rounded-md border-2 border-dashed p-1 flex flex-col items-center justify-between text-[10px] font-sans-clean font-semibold shadow-xs"
+            className="w-9 h-11 sm:w-12 sm:h-14 rounded-md border border-dashed p-1 flex flex-col items-center justify-between text-[10px] font-sans-clean font-semibold shadow-xs"
             style={{ 
               borderColor: currentTheme.primary,
               backgroundColor: currentTheme.stampBg,
               color: currentTheme.textColor
             }}
           >
-            <span className="text-[8px] uppercase tracking-tighter opacity-70">USA</span>
-            <div className="w-5 h-5 rounded-full bg-rose-200/50 flex items-center justify-center my-auto">
+            <span className="text-[7px] sm:text-[8px] uppercase tracking-tighter opacity-70">USA</span>
+            <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-rose-200/50 flex items-center justify-center my-auto">
               ♡
             </div>
-            <span className="text-[8px] font-mono">15c</span>
+            <span className="text-[7px] sm:text-[8px] font-mono">15c</span>
           </div>
         </div>
 
         {/* Top Left Botanical Corner Decoration */}
-        <div className="absolute top-2 left-2 opacity-40 pointer-events-none">
-          <FloralCornerDecoration className="w-16 h-16 sm:w-20 sm:h-20" color={currentTheme.botanical} />
+        <div className="absolute top-2 left-2 opacity-35 sm:opacity-40 pointer-events-none">
+          <FloralCornerDecoration className="w-12 h-12 sm:w-20 sm:h-20" color={currentTheme.botanical} />
         </div>
 
         {/* Date Header */}
-        <div className="pt-8 sm:pt-10 mb-6 border-b border-stone-200/60 pb-4">
-          <p className="font-serif-display text-sm tracking-widest uppercase opacity-60" style={{ color: currentTheme.textColor }}>
+        <div className="pt-10 sm:pt-10 mb-6 border-b border-stone-200/60 pb-3 pr-24 sm:pr-28">
+          <p className="font-serif-display text-xs sm:text-sm tracking-widest uppercase opacity-60" style={{ color: currentTheme.textColor }}>
             {formattedDate}
           </p>
         </div>
@@ -83,8 +83,8 @@ export const LetterView: React.FC<LetterViewProps> = ({
           <div className="w-2 h-2 rounded-full mt-2" style={{ backgroundColor: currentTheme.primary }} />
         </div>
 
-        {/* Body Paragraphs */}
-        <div className="space-y-5 font-serif-body text-base sm:text-lg leading-relaxed text-stone-800 tracking-wide opacity-90">
+        {/* Body Paragraphs with constrained max readable line length (~65ch) */}
+        <div className="space-y-5 font-serif-body text-base sm:text-lg leading-relaxed text-stone-800 tracking-wide opacity-90 max-w-[65ch]">
           {paragraphs.map((paragraph, idx) => (
             <p key={idx} className="whitespace-pre-line">
               {paragraph}

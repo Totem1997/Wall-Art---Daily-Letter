@@ -49,7 +49,8 @@ export const ArchiveDrawer: React.FC<ArchiveDrawerProps> = ({
             </h3>
             <button 
               onClick={onClose}
-              className="p-2 rounded-full hover:bg-stone-200/50 transition-colors"
+              aria-label="Close modal"
+              className="p-2 rounded-full hover:bg-stone-200/50 transition-colors cursor-pointer"
             >
               <X className="w-5 h-5 opacity-60" />
             </button>

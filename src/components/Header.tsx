@@ -21,6 +21,7 @@ export const Header: React.FC<HeaderProps> = ({
     <header className="w-full max-w-xl mx-auto px-6 pt-5 pb-3 flex items-center justify-between select-none transition-colors duration-500">
       <button
         onClick={onOpenArchive}
+        aria-label="View Archive and Past Letters"
         className="p-2.5 rounded-full hover:bg-black/5 active:scale-95 transition-all flex items-center gap-1.5 text-xs font-medium tracking-wide uppercase"
         style={{ color: currentTheme.textColor }}
         title="View Archive & Past Letters"
@@ -41,6 +42,7 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="flex items-center gap-1">
         <button
           onClick={onToggleSound}
+          aria-label={soundEnabled ? "Mute ambient audio" : "Enable ambient audio"}
           className="p-2.5 rounded-full hover:bg-black/5 active:scale-95 transition-all text-xs"
           style={{ color: currentTheme.textColor }}
           title={soundEnabled ? "Mute ambient audio" : "Enable ambient audio"}
@@ -54,6 +56,7 @@ export const Header: React.FC<HeaderProps> = ({
 
         <button
           onClick={onOpenSettings}
+          aria-label="Personalization & Themes"
           className="p-2.5 rounded-full hover:bg-black/5 active:scale-95 transition-all text-xs"
           style={{ color: currentTheme.textColor }}
           title="Personalization & Themes"
